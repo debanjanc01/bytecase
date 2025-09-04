@@ -12,7 +12,7 @@ git() {
     # Check if on protected branch and command is dangerous
     if [[ -n "$current_branch" ]]; then
         case "$current_branch" in
-            master|main|develop|production)
+            (master|main|develop|production)
                 # Check if first argument is commit or push
                 if [[ "$1" == "commit" || "$1" == "push" ]]; then
                     echo ""
@@ -21,7 +21,7 @@ git() {
                     echo "   This command is blocked to prevent accidental commits to protected branches."
                     echo ""
                     echo "   Quick fix:"
-                    echo "   git checkout -b username/your-jira-or-feature-name
+                    echo "   git checkout -b username/your-jira-or-feature-name"
                     echo ""
                     return 1
                 fi
